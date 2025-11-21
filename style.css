@@ -1,0 +1,479 @@
+/* ==============================================
+   Project: Portfolio Website (Lab Assignment 3)
+   Updated Theme: Purple / Black Modern UI
+   Author: Tanishq Sethi
+   ============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #0d0d0f;
+    color: #fff;
+    line-height: 1.7;
+}
+
+/* ============================
+   GLASS HEADER + NAV MENU
+   ============================ */
+
+/* HEADER MAIN STYLING */
+.header {
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 15, 18, 0.6);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* LOGO + TEXT GROUP */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* LOGO IMAGE */
+.logo-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;      /* important so the circle doesn't distort */
+    border-radius: 50%;     /* makes it round */
+    border: 2px solid #a855f7;   /* optional purple border */
+    box-shadow: 0 0 10px rgba(168,85,247,0.4);  /* optional glow */
+}
+
+
+/* LOGO TEXT */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #a855f7;
+}
+
+/* NAVIGATION MENU */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-menu ul li a:hover {
+    color: #a855f7;
+    text-shadow: 0 0 8px #a855f7;
+}
+
+/* ============================
+   HERO SECTION (FLEXBOX)
+   ============================ */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 10%;
+    gap: 50px;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.hero-text p {
+    margin: 15px 0;
+    opacity: 0.85;
+}
+/* HERO WITH PHOTO */
+
+.with-photo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+/* PHOTO STYLE */
+.hero-photo img {
+    width: 290px;
+    border-radius: 300px;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.45);
+    animation: floatimg 4s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes floatimg {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .with-photo {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-photo img {
+        margin-top: 20px;
+        width: 65%;
+    }
+}
+
+/* Animated gradient role text */
+.animated-role {
+    background: linear-gradient(90deg, #a855f7, #6a38ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 3s infinite alternate;
+    font-size: 1.3rem;
+    margin: 10px 0 20px 0;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 0px #a855f7; }
+    to { text-shadow: 0 0 15px #a855f7; }
+}
+
+.hero-img img {
+    width: 260px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(168,85,247,0.4);
+    animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ============================
+   SECTIONS BASE DESIGN
+   ============================ */
+.section {
+    padding: 80px 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.section-title span {
+    color: #a855f7;
+}
+
+/* ============================
+   ABOUT SECTION
+   ============================ */
+/* ABOUT SECTION LAYOUT */
+.about-section {
+    padding: 80px 10%;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* ABOUT IMAGE STYLE */
+.about-image {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.45));
+    animation: floatAbout 4s ease-in-out infinite;
+}
+
+/* Floating animation for the image */
+@keyframes floatAbout {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ABOUT TEXT */
+.about-text {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+/* RESPONSIVE ABOUT SECTION */
+@media (max-width: 850px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 60%;
+    }
+}
+
+/* ============================
+   PROJECTS GRID
+   ============================ */
+
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* LEFT SIDE holds EVERYTHING */
+.projects-left {
+    width: 100%;
+}
+
+/* GRID = vertical list of rows */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* Each row = left card + right icon */
+.project-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+/* ------------------------------------
+   PROJECT CARD (LEFT TEXT BOX)
+------------------------------------ */
+.project-card {
+    flex: 1; /* take max width */
+    background: #141417;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #2c2c34;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: #a855f7;
+    box-shadow: 0 0 20px rgba(168,85,247,0.35);
+    transform: translateY(-3px);
+}
+
+.project-card strong {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.project-card p {
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* ------------------------------------
+   PROJECT ICON (RIGHT SIDE)
+------------------------------------ */
+.project-icon {
+    width: 90px; /* controls right column width */
+    display: flex;
+    justify-content: center;
+}
+
+.single-project-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 12px;
+    filter: drop-shadow(0 0 10px rgba(168,85,247,0.4));
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.single-project-logo:hover {
+    transform: scale(1.15);
+}
+
+/* ------------------------------------
+   RESPONSIVE — STACK ON MOBILE
+------------------------------------ */
+@media (max-width: 850px) {
+    .project-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-icon {
+        margin-top: 12px;
+    }
+}
+
+
+/* ============================
+   SKILLS GRID
+   ============================ */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 18px;
+    background: #141417;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid #2c2c34;
+    transition: 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: #a855f7;
+    box-shadow: 0 0 20px rgba(168,85,247,0.3);
+}
+
+/* ============================
+   CONTACT FORM
+   ============================ */
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+    background: #141417;
+    border-radius: 12px;
+    border: 1px solid #2c2c34;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.contact-form label {
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    background: #1c1c20;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.btn-primary {
+    padding: 12px 20px;
+    border: none;
+    background: #a855f7;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+/* ============================
+   FOOTER + SOCIAL BUTTONS
+   ============================ */
+.footer {
+    background: #0f0f12;
+    text-align: center;
+    padding: 30px 10%;
+    margin-top: 40px;
+}
+
+.footer-social {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* Hover Effects */
+.insta-btn:hover {
+    background: #d62976;
+    border-color: #d62976;
+    transform: translateY(-5px);
+}
+
+.git-btn:hover {
+    background: #333;
+    border-color: #333;
+    transform: translateY(-5px);
+}
+
+.mail-btn:hover {
+    background: #ea4335;
+    border-color: #ea4335;
+    transform: translateY(-5px);
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 850px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-img {
+        margin-top: 20px;
+    }
+
+    .nav-menu ul {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
