@@ -1,3 +1,8 @@
+
+![Alt Text](assets/pagephoto1.png)
+![Alt Text](assets/pagephoto2.png)
+![Alt Text](assets/pagephoto3.png)
+
 # Portfolio Website – README
 
 This portfolio project showcases your technical skills, projects, and personal branding using clean UI, modern animations, and responsive layouts.
